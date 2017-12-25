@@ -251,6 +251,18 @@ namespace SchoolADM.Migrations
                         TeacherId = teacher1.Id
                     });
 
+                var teacher2 = userManager.FindByName("teacher2@school.com");
+
+                context.Course.AddOrUpdate(
+                    c => c.CourseId,
+                    new Course
+                    {
+                        CourseId = 1,
+                        CourseName = "Mathematics 2",
+                        CoursePathId = 1,
+                        TeacherId = teacher1.Id
+                    });
+
                 context.SaveChanges();
 
                 //context.Course.AddOrUpdate(
